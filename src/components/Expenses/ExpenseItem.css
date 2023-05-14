@@ -34,6 +34,13 @@
     padding: 0.5rem;
     border-radius: 12px;
   }
+
+  .button {
+    color:#3a3a3a;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 10px;
+  }
   
   @media (min-width: 580px) {
     .expense-item__description {
