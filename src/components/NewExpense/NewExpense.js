@@ -1,10 +1,11 @@
 import React from "react";
 import "./NewExpense.css";
+import ExpenseForm from "./ExpenseForm";
 
 function NewExpense() {
   return (
-    <div>
-      <h1>Working</h1>
+    <div className="new-expense">
+      <ExpenseForm />
     </div>
   );
 }
