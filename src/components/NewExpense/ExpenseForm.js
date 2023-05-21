@@ -2,40 +2,54 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 function ExpenseForm() {
-  // const [enteredTitle, setEnteredTitle] = useState("");
-  // const [eneteredDate, setEnteredDate] = useState("");
-  // const [enteredPrice, setEnteredPrice] = useState("");
-  const [userInput, setUserInput] = useState({
-    enteredTitle: "",
-    enteredPrice: "",
-    enteredDate: "",
-  });
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [eneteredDate, setEnteredDate] = useState("");
+  const [enteredPrice, setEnteredPrice] = useState("");
+
+  // Setting single state object to store state
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: "",
+  //   enteredPrice: "",
+  //   enteredDate: "",
+  // });
 
   // Saving title to state
   const titleChangeHandler = (event) => {
-    setUserInput({
-      ...userInput,
-      enteredTitle: event.target.value,
-    });
-    console.log(event.target.value);
+    setEnteredTitle(event.target.value);
+
+    // Updating state in single state
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: event.target.value,
+    // });
+    // console.log(event.target.value);
+
+    // Correct way of using a function to update state
+    // setUserInput((prevState) => {
+    //   return { ...prevState, enteredTitle: event.target.value };
+    // });
   };
 
   // Saving price to state
 
   const priceChangeHandler = (event) => {
-    setUserInput({
-      ...userInput,
-      enteredPrice: event.target.value,
-    });
+    setEnteredPrice(event.target.value);
+
+    // setUserInput({
+    //   ...userInput,
+    //   enteredPrice: event.target.value,
+    // });
   };
 
   // Saving date to state
 
   const dateChangeHandler = (event) => {
-    setUserInput({
-      ...userInput,
-      enteredDate: event.target.value,
-    });
+    setEnteredDate(event.target.value);
+
+    // setUserInput({
+    //   ...userInput,
+    //   enteredDate: event.target.value,
+    // });
     console.log(event.target.value);
   };
   return (
