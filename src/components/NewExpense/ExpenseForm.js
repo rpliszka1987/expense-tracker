@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-function ExpenseForm() {
+function ExpenseForm(props) {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [eneteredDate, setEnteredDate] = useState("");
   const [enteredPrice, setEnteredPrice] = useState("");
@@ -62,7 +62,8 @@ function ExpenseForm() {
       date: new Date(eneteredDate),
     };
 
-    console.log(expenseData);
+    // Calling the function from parent to pass up the data to the parent
+    props.onSaveExpenseData(expenseData);
 
     // Clear input fields from form on submission
     setEnteredTitle("");
