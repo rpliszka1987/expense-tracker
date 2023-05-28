@@ -56,13 +56,18 @@ function ExpenseForm() {
   const formSumbmitHandler = (event) => {
     event.preventDefault();
 
-    const formData = {
+    const expenseData = {
       title: enteredTitle,
       price: enteredPrice,
       date: new Date(eneteredDate),
     };
 
-    console.log(formData);
+    console.log(expenseData);
+
+    // Clear input fields from form on submission
+    setEnteredTitle("");
+    setEnteredPrice("");
+    setEnteredDate("");
   };
 
   return (
@@ -70,7 +75,11 @@ function ExpenseForm() {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={titleChangeHandler} />
+          <input
+            type="text"
+            value={enteredTitle}
+            onChange={titleChangeHandler}
+          />
         </div>
         <div className="new-expense__control">
           <label>Price</label>
@@ -78,6 +87,7 @@ function ExpenseForm() {
             type="number"
             min="0.01"
             step="0.01"
+            value={enteredPrice}
             onChange={priceChangeHandler}
           />
         </div>
@@ -87,6 +97,7 @@ function ExpenseForm() {
             type="date"
             min="2019-01-01"
             max="2023-12-31"
+            value={eneteredDate}
             onChange={dateChangeHandler}
           />
         </div>
