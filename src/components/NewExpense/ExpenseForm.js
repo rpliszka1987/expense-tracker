@@ -71,6 +71,12 @@ function ExpenseForm(props) {
     setEnteredDate("");
   };
 
+  const clearFormHandler = () => {
+    setEnteredTitle("");
+    setEnteredPrice("");
+    setEnteredDate("");
+  }
+
   return (
     <form onSubmit={formSumbmitHandler}>
       <div className="new-expense__controls">
@@ -104,6 +110,7 @@ function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={clearFormHandler}>Clear</button>
         <button type="button" onClick={props.onCancel}>
           Cancel
         </button>
