@@ -3,6 +3,7 @@ import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 import "./Expenses.css";
 
 function Expenses(props) {
@@ -24,6 +25,7 @@ function Expenses(props) {
           selected={filteredYear}
           onAddFilterYear={saveFilterData}
         />
+        <ExpensesChart expenses={filteredExpenses} />
         {/* Displays filtered expenses using conditional statement. If there are none it displays no expenses found */}
         <ExpensesList items={filteredExpenses} />
       </Card>
